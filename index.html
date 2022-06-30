@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" text="text/css" href="style.css" />
+    <title>Quotes Quiz</title>
+</head>
+<!--<body>
+    <section>
+    <div id ="start">Start Challenge!</div>
+    <div id ="challenge" style="display:none;">
+    <div id ="question"><p>Question</p></div>
+    <div id="timer"></div>
+    <div id="counter"></div>
+    <div id="timer"></div>
+</div>
+<div id="question">
+    <div class="answer" id= "A" onclick="checkAnswer('A')">A</div>
+    <div class="answer" id= "B" onclick="checkAnswer('B')">B</div>
+    <div class="answer" id= "C" onclick="checkAnswer('C')">C</div>
+</div>
+<div id="progress"></div class="prog"></div>
+<div id="scoreContainer" style="display:none;"></div>-->
+
+<body>
+    <section class="cardMain">
+        <div class="card">
+            <h1>Quotes Quiz</h1>
+            <p>Try to identify the person responsible for each statement before the time runs out. Keep in mind that
+                incorrect
+                answers will result in 10 seconds being deducted from your timer. </p>
+            <button id="startButton">Start Challenge</button>
+        </div>
+    </section>
+    <section>
+        <div id="timer-card">
+            <h3 id="timer-text">180</h3>
+            <!--<button id="start-timer">Start Timer</button>-->
+        </div>
+    </section>
+    <section>
+        <div class="card" id="questionCard">
+            <h2 id="actual-question">Question</h2>
+            <button id="option-one">Option1</button>
+            <button id="option-two">Option2</button>
+            <button id="option-three">Option3</button>
+            <button id="option-four">Option4</button>
+            <h3 id="answer">Answer</h3>
+        </div>
+    </section>
+    <!--<section>
+        <div class="card">
+        <h2>"We tell ourselves stories in order to live."</h2>
+        <button id="">Louise Erdrich</button>
+        <button id="">Joan Didion</button>
+        <button id="">Daphne Du Maurier</button>
+        <button id="">Dani Shapiro</button>
+        <h3 id="answer">Answer</h3>
+        </div>
+    </section>
+    <section>
+        <div class="card">
+            <h2>All done!</h2>
+            <p id="final-score"></p>
+            <p>Intials:
+                <input type="text" name="initials" placeholder="Enter Your Initials Here"/>
+                </p>
+                <button id="submit">Submit</button>
+        </div>
+    </section>
+    <section>
+        <div class="card">
+            <h2>Highscores</h2>
+           which element do I use to display high scores-->
+    <button id="go-back">Go Back</button>
+    <button id="clear-highscores">Clear Highscores</button>
+    </div>
+    </section>
+    <script src="./script.js"></script>
+</body>
+
+</html>
