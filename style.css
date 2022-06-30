@@ -4,21 +4,51 @@
     box-sizing:border-box;
     font-family:Arial, Helvetica, sans-serif;
 }
+
 .cardMain {
-    background-color: rgb(141, 75, 141);
-    color: white;
+    /*background-color: rgb(141, 75, 141);*/
+    display: flex;
+    justify-content: center;
+    color: black;
     font-weight: bold;
     padding-top: 5px;
     padding-right: 5px;
     padding-bottom: 5px;
     padding-left: 5px;
-    text-align: center;
+}
+
+.cardMain p {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#startButton {
+    margin-top: 150px;
 
 }
+
+h1 {
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
 .card {
     text-align:center;
     border: 2px solid black;
+    margin: 10px 10px 10px 10px;
+    height: 600px;
+    width: 600px;
+} 
+
+h2 {
+    margin-top: 40px;
 }
+
+#questionCard {
+    display: flex;
+    justify-content: center;
+}
+    
 .card button{
     background-color: rgb(141, 75, 141);
     color: white;
@@ -31,8 +61,12 @@
 
 #timer-card {
     text-align: right;
+    margin-right: 50px;
 }
 
+.hide {
+    display: none;
+}
 /*#start-timer {
     background-color: rgb(141, 75, 141);
     color: white;

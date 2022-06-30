@@ -5,27 +5,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" text="text/css" href="style.css" />
+    <link rel="stylesheet"   href="./style.css" />
     <title>Quotes Quiz</title>
 </head>
-<!--<body>
-    <section>
-    <div id ="start">Start Challenge!</div>
-    <div id ="challenge" style="display:none;">
-    <div id ="question"><p>Question</p></div>
-    <div id="timer"></div>
-    <div id="counter"></div>
-    <div id="timer"></div>
-</div>
-<div id="question">
-    <div class="answer" id= "A" onclick="checkAnswer('A')">A</div>
-    <div class="answer" id= "B" onclick="checkAnswer('B')">B</div>
-    <div class="answer" id= "C" onclick="checkAnswer('C')">C</div>
-</div>
-<div id="progress"></div class="prog"></div>
-<div id="scoreContainer" style="display:none;"></div>-->
 
 <body>
+    <section>
+        <div id="timer-card">
+            <h3 id="timer-text">180</h3>
+            <!--<button id="start-timer">Start Timer</button>-->
+        </div>
+    </section>
     <section class="cardMain">
         <div class="card">
             <h1>Quotes Quiz</h1>
@@ -35,14 +25,8 @@
             <button id="startButton">Start Challenge</button>
         </div>
     </section>
-    <section>
-        <div id="timer-card">
-            <h3 id="timer-text">180</h3>
-            <!--<button id="start-timer">Start Timer</button>-->
-        </div>
-    </section>
-    <section>
-        <div class="card" id="questionCard">
+    <section class="hide" id="questionCard">
+        <div id="cardDiv" class="card hide">
             <h2 id="actual-question">Question</h2>
             <button id="option-one">Option1</button>
             <button id="option-two">Option2</button>
@@ -61,23 +45,22 @@
         <h3 id="answer">Answer</h3>
         </div>
     </section>
-    <section>
-        <div class="card">
-            <h2>All done!</h2>
-            <p id="final-score"></p>
-            <p>Intials:
-                <input type="text" name="initials" placeholder="Enter Your Initials Here"/>
-                </p>
-                <button id="submit">Submit</button>
-        </div>
-    </section>
-    <section>
+    <section>-->
+    <div class="card hide">
+        <h2>All done!</h2>
+        <p id="final-score"></p>
+        <p>Intials:
+            <input type="text" name="initials" placeholder="Enter Your Initials Here" />
+        </p>
+        <button id="submit">Submit</button>
+    </div>
+    <section class="hide">
         <div class="card">
             <h2>Highscores</h2>
-           which element do I use to display high scores-->
-    <button id="go-back">Go Back</button>
-    <button id="clear-highscores">Clear Highscores</button>
-    </div>
+            <!--which element do I use to display high scores-->
+            <button id="go-back">Go Back</button>
+            <button id="clear-highscores">Clear Highscores</button>
+        </div>
     </section>
     <script src="./script.js"></script>
 </body>
