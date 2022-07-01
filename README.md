@@ -5,7 +5,7 @@
 This project entailed application development containing HTML, CSS and JavaScript code. Specifically, this project maintaiend heavy focus on the dynamic properties of JavaScript. 
 
 ## How to Run
-Go to site: 
+Go to site: https://smariagomez.github.io/code-quiz/
 
 
 ## How to Use
