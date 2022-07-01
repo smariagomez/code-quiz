@@ -15,7 +15,9 @@ var buttonFour = document.querySelector("#option-four");
 var card = document.querySelector("#cardDiv");
 var answerResponse = document.getElementById("answer");
 var index = 0;
-var scoreReader = document.getElementById("score-count")
+var scoreReader = document.getElementById("score-count");
+var highscoreButton = document.getElementById("highscore-button");
+var finalScorePage = document.getElementById("final-score-page");
 
 //questions array
 var questions = [
@@ -48,27 +50,31 @@ var questions = [
 ]
 
 //console log examples console
-    //log(questions[0].answers[2])
-    //console.log(card)
-    //console.log(card.children)
+//log(questions[0].answers[2])
+//console.log(card)
+//console.log(card.children)
 
 //start game
 //triggered event listener on start game button
 //function to present hidden elements
 startButton.addEventListener("click", function () {
-   cardMain.classList.add("hide")
-   card.classList.remove("hide")
-   cardSection.classList.remove("hide")
+    cardMain.classList.add("hide")
+    card.classList.remove("hide")
+    cardSection.classList.remove("hide")
 });
 //timer-setInterval-start timer-render to page
 //load first question
 startButton.addEventListener("click", function () {
     displayQuestion()
-     var timeInterval = setInterval(function () {
+    var timeInterval = setInterval(function () {
         secondsLeft--;
         timerText.textContent = ("Seconds Left:" + secondsLeft);
-        if(secondsLeft===0 || index > 4){
+        //stop timer        
+        //called at end of timer or when current question> #of questions
+        if (secondsLeft === 0 || index > 4) {
             clearInterval(timeInterval);
+            highscoreButton.classList.remove("hide")
+            console.log(end)
             endGame();
         }
     }, 1000);
@@ -76,8 +82,8 @@ startButton.addEventListener("click", function () {
 
 //render the question and multiple choices to the page
 
-function displayQuestion(){
-    answerResponse.textContent="";
+function displayQuestion() {
+    answerResponse.textContent = "";
     question.textContent = questions[index].question;
     buttonOne.textContent = questions[index].answers[0];
     buttonTwo.textContent = questions[index].answers[1];
@@ -88,54 +94,45 @@ function displayQuestion(){
 //Check answer
 //compare the choice with the correct answer 
 //act on right or wrong answer
-    //deduct 10 second for each incorrect answer
-function nextQuestion(event){
-    if (event.target.textContent===questions[index].correct){
-        answerResponse.textContent="Correct!";
-//score
+//deduct 10 second for each incorrect answer
+function nextQuestion(event) {
+    if (event.target.textContent === questions[index].correct) {
+        answerResponse.textContent = "Correct!";
+        //score
         score++
-        scoreReader.textContent= ("Score:" + score)
+        scoreReader.textContent = ("Score:" + score)
     } else {
-        answerResponse.textContent="Incorrect!";
-        secondsLeft= secondsLeft-10;
+        answerResponse.textContent = "Incorrect!";
+        secondsLeft = secondsLeft - 10;
     }
     console.log(score)
     console.log(secondsLeft)
-//Continue loading new questions
-//currentquestion++
-    setTimeout(function(){
-    index++;
-    displayQuestion()
- },500)
+    //Continue loading new questions
+    //currentquestion++
+    setTimeout(function () {
+        index++;
+        displayQuestion()
+    }, 500)
 }
 //check which button user clicked
-buttonOne.addEventListener("click",nextQuestion)
-buttonTwo.addEventListener("click",nextQuestion)
-buttonThree.addEventListener("click",nextQuestion)
-buttonFour.addEventListener("click",nextQuestion)
+buttonOne.addEventListener("click", nextQuestion)
+buttonTwo.addEventListener("click", nextQuestion)
+buttonThree.addEventListener("click", nextQuestion)
+buttonFour.addEventListener("click", nextQuestion)
 
 //endGame
-
-
-function endGame(){
-
-}
-
-//called at end of timer or when current question> #of questions
-  //if (secondsLeft===0);
-//console.log("endGame");
-  //}
-
-//function stopTimer() {
-  //  if (secondsLeft<0 || questions>4)
-//cancel timer
-
+//bug--can still continue clicking final quiz button
 //prompt for user initials
-// function finalInitials () {
-//     localStorage.setItem("initials",(letters));
-// submitButton.addEventListener("click", function(event) {
-//     event.preventDefault();
-        
+highscoreButton.addEventListener("click", function () {
+    card.classList.add("hide")
+    finalScorePage.classList.remove("hide")
+
+});
+//below are attempts at storing locally
+//  function saveData (){
+//       localStorage.setItem("initials",letters);
+//     submitButton.addEventListener("click", function()
+// })
 //         var initials = initialsInput.value.trim();
 //         //local storage
 //         storeletters();
